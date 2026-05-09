@@ -1,0 +1,68 @@
+.town-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-sky) 0 36%, #74bd68 36% 100%);
+}
+
+.sky-band,
+.mountain-band,
+.river-path,
+.grass-field {
+  position: absolute;
+  inset: 0;
+}
+
+.sky-band {
+  background:
+    linear-gradient(90deg, transparent 0 16%, rgba(255, 255, 255, 0.48) 16% 22%, transparent 22% 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24), transparent);
+}
+
+.mountain-band {
+  top: 22%;
+  height: 22%;
+  clip-path: polygon(0 100%, 14% 28%, 28% 100%, 44% 18%, 62% 100%, 78% 32%, 100% 100%);
+  background: #6fa06f;
+}
+
+.grass-field {
+  top: 38%;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 2px, transparent 2px 38px),
+    linear-gradient(180deg, #72bd66, #4f944f);
+  background-size: 40px 100%, 100% 100%;
+}
+
+.river-path {
+  top: 42%;
+  left: 33%;
+  width: 18%;
+  height: 68%;
+  transform: rotate(18deg);
+  border-left: 10px solid rgba(54, 126, 167, 0.5);
+  border-right: 10px solid rgba(54, 126, 167, 0.5);
+  background: #55b6d4;
+}
+
+.town-stage-label {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  max-width: 360px;
+  padding: 10px;
+  border: 3px solid #503929;
+  color: var(--color-panel-dark);
+  background: rgba(255, 244, 214, 0.9);
+}
+
+.town-stage-label strong,
+.town-stage-label span {
+  display: block;
+}
+
+.town-stage-label span {
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 12px;
+}

@@ -1,0 +1,40 @@
+:root {
+  --color-sky: #8ed7f2;
+  --color-grass: #68ad66;
+  --color-earth: #7b5d45;
+  --color-panel: #fff4d6;
+  --color-panel-dark: #3c2a22;
+  --color-ink: #2f241d;
+  --color-muted: #6f5a47;
+  --color-accent: #d96f32;
+  --color-accent-strong: #a94824;
+  --shadow-pixel: 0 6px 0 rgba(50, 31, 22, 0.24);
+  --font-pixel: "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #173b46;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-ink);
+  background: linear-gradient(180deg, #6fc4e8 0%, #29606b 100%);
+  font-family: var(--font-pixel);
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

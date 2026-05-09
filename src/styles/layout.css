@@ -1,0 +1,78 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 14px;
+}
+
+.town-shell {
+  position: relative;
+  width: min(1180px, 100%);
+  aspect-ratio: 16 / 9;
+  margin: 16px auto 0;
+  overflow: hidden;
+  border: 6px solid #503929;
+  background: var(--color-sky);
+  box-shadow: var(--shadow-pixel);
+}
+
+.top-nav-layer {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.background-layer,
+.building-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.background-layer {
+  z-index: 1;
+}
+
+.building-layer {
+  z-index: 2;
+}
+
+.module-panel {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 4;
+  width: min(320px, calc(100% - 36px));
+}
+
+.concept-preview {
+  width: min(1180px, 100%);
+  margin: 18px auto 0;
+  padding: 12px;
+  border: 4px solid #503929;
+  background: rgba(255, 244, 214, 0.92);
+  box-shadow: var(--shadow-pixel);
+}
+
+.concept-preview summary {
+  cursor: pointer;
+  color: var(--color-panel-dark);
+  font-weight: 700;
+}
+
+.concept-preview img {
+  margin-top: 12px;
+  border: 4px solid #503929;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 8px;
+  }
+
+  .town-shell {
+    aspect-ratio: 4 / 5;
+  }
+
+  .module-panel {
+    right: 10px;
+    bottom: 10px;
+  }
+}

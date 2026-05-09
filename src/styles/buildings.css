@@ -1,0 +1,43 @@
+.building-hotspot {
+  position: absolute;
+  display: grid;
+  place-items: end center;
+  padding: 6px;
+  border: 3px dashed rgba(80, 57, 41, 0.7);
+  color: var(--color-ink);
+  background: rgba(255, 226, 164, 0.3);
+  cursor: pointer;
+}
+
+.building-hotspot::before {
+  content: "";
+  position: absolute;
+  inset: 18% 18% 34%;
+  border: 4px solid #503929;
+  background:
+    linear-gradient(90deg, transparent 42%, #503929 42% 58%, transparent 58%),
+    linear-gradient(180deg, #e88950 0 55%, #c95f38 55% 100%);
+  box-shadow: 0 6px 0 rgba(50, 31, 22, 0.24);
+}
+
+.building-hotspot span {
+  position: relative;
+  z-index: 1;
+  padding: 3px 5px;
+  border: 2px solid #503929;
+  background: rgba(255, 244, 214, 0.94);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.building-hotspot:hover,
+.building-hotspot:focus-visible,
+.building-hotspot.is-selected {
+  outline: none;
+  border-style: solid;
+  background: rgba(246, 168, 95, 0.42);
+}
+
+.building-hotspot.is-selected span {
+  background: #f6a85f;
+}

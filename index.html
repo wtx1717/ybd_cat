@@ -3,26 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>云边的小镇 - 概念图预览</title>
-  <style>
-    html {
-      background: #081417;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #081417;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  </style>
+  <title>云边的小镇 - 像素风个人网站</title>
+  <link rel="stylesheet" href="./src/styles/base.css">
+  <link rel="stylesheet" href="./src/styles/layout.css">
+  <link rel="stylesheet" href="./src/styles/top-nav.css">
+  <link rel="stylesheet" href="./src/styles/town-stage.css">
+  <link rel="stylesheet" href="./src/styles/buildings.css">
+  <link rel="stylesheet" href="./src/styles/overview.css">
+  <link rel="stylesheet" href="./src/styles/modules.css">
 </head>
 <body>
-  <img src="./概念图-白天.png" alt="云边的小镇像素风个人网站概念图">
+  <div id="app" class="app-shell">
+    <header id="top-nav-layer" class="top-nav-layer" aria-label="顶部导航层"></header>
+
+    <main class="town-shell" aria-label="云边的小镇首页">
+      <section id="background-layer" class="background-layer" aria-label="背景场景层"></section>
+      <section id="building-layer" class="building-layer" aria-label="建筑交互层"></section>
+      <aside id="module-panel" class="module-panel" aria-live="polite"></aside>
+    </main>
+
+    <section id="overview-layer" class="overview-layer" aria-label="概览框层"></section>
+
+    <details class="concept-preview">
+      <summary>查看概念图预览</summary>
+      <img src="./概念图-白天.png" alt="云边的小镇像素风个人网站概念图">
+    </details>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
