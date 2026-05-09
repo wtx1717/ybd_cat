@@ -1,15 +1,11 @@
 :root {
-  --color-sky: #8ed7f2;
-  --color-grass: #68ad66;
-  --color-earth: #7b5d45;
-  --color-panel: #fff4d6;
-  --color-panel-dark: #3c2a22;
-  --color-ink: #2f241d;
-  --color-muted: #6f5a47;
-  --color-accent: #d96f32;
-  --color-accent-strong: #a94824;
-  --shadow-pixel: 0 6px 0 rgba(50, 31, 22, 0.24);
-  --font-pixel: "Courier New", Courier, monospace;
+  --nav-bg: #1f4e5f;
+  --content-bg: #f4c95d;
+  --content-panel-bg: #ffffff;
+  --text-main: #172026;
+  --text-light: #ffffff;
+  --text-muted: #4d5b63;
+  --link-bg: rgba(255, 255, 255, 0.14);
 }
 
 * {
@@ -18,23 +14,18 @@
 
 html {
   min-height: 100%;
-  background: #173b46;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  color: var(--color-ink);
-  background: linear-gradient(180deg, #6fc4e8 0%, #29606b 100%);
-  font-family: var(--font-pixel);
+  color: var(--text-main);
+  background: var(--content-bg);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
 }
 
-button {
-  font: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
+a {
+  color: inherit;
+  text-decoration: none;
 }
