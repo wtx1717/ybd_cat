@@ -10,12 +10,57 @@
 <body>
   <div class="page-shell">
     <header class="top-navigation" aria-label="顶部导航栏">
-      <div class="brand">Layout Lab</div>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="#overview">概览</a>
-        <a href="#sections">分区</a>
-        <a href="#preview">预览</a>
+      <section class="nav-section player-section" aria-label="角色信息">
+        <div class="player-avatar" aria-hidden="true">猫</div>
+        <div class="player-info">
+          <strong>LV. 23</strong>
+          <div class="stat-row">
+            <span>EXP</span>
+            <span class="meter">
+              <span class="meter-fill exp-fill" style="width: 36%"></span>
+              <strong class="meter-label">320 / 900</strong>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="nav-section vitals-section" aria-label="生命值与体力">
+        <div class="vital-row">
+          <span class="section-title">HP</span>
+          <span class="icon-list heart-list" aria-hidden="true">
+            <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+          </span>
+        </div>
+        <div class="vital-row">
+          <span class="section-title">体力</span>
+          <span class="icon-list drumstick-list" aria-hidden="true">
+            <span>🍗</span><span>🍗</span><span>🍗</span><span>🍗</span><span>🍗</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="nav-section wallet-section" aria-label="资源">
+        <div class="resource-row"><span aria-hidden="true">◎</span><strong>1,268</strong></div>
+        <div class="resource-row"><span aria-hidden="true">◆</span><strong>42</strong></div>
+      </section>
+
+      <nav class="nav-section nav-links" aria-label="主导航">
+        <div class="nav-menu">
+          <a href="#overview" aria-current="page"><span aria-hidden="true">⌂</span><strong>首页</strong></a>
+          <a href="#notes"><span aria-hidden="true">▤</span><strong>想法与笔记</strong></a>
+          <a href="#projects"><span aria-hidden="true">▥</span><strong>项目酒馆</strong></a>
+          <a href="#tasks"><span aria-hidden="true">⌂</span><strong>任务小屋</strong></a>
+          <a href="#training"><span aria-hidden="true">♣</span><strong>跑步训练场</strong></a>
+          <a href="#spirit"><span aria-hidden="true">⌃</span><strong>灵感小屋</strong></a>
+          <a href="#logs"><span aria-hidden="true">▣</span><strong>日志站</strong></a>
+          <a href="#github"><span aria-hidden="true">⌘</span><strong>GitHub</strong></a>
+        </div>
       </nav>
+
+      <section class="nav-section task-section" aria-label="当前任务">
+        <strong>当前任务</strong>
+        <span>持续创造，跑步向前！</span>
+      </section>
     </header>
 
     <main class="content-area" id="overview" aria-label="主题内容">
