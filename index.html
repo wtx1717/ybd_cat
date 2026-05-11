@@ -95,9 +95,67 @@
         height="1934"
         alt="云边小镇背景"
       >
+      <aside class="profile-info-panel" aria-label="个人信息简栏">
+        <div class="profile-info-card">
+          <section class="profile-hero">
+            <div class="profile-portrait-frame">
+              <img src="./assets/icons/top-nav/avatar-cat-frame.png" width="448" height="448" alt="云边的云头像">
+            </div>
+
+            <div class="profile-intro">
+              <h2>云边的云</h2>
+              <p class="profile-role">代码工匠 · 跑者 · 猫奴</p>
+              <p class="profile-bio">喜欢把想法变成可运行的东西，也喜欢把跑步变成习惯。</p>
+            </div>
+          </section>
+
+          <ul class="profile-tags" aria-label="技能标签">
+            <li>Python</li>
+            <li>C++</li>
+            <li>JavaScript</li>
+            <li>跑步</li>
+          </ul>
+
+          <dl class="profile-stats">
+            <div>
+              <dt><span aria-hidden="true">◈</span> 代码提交</dt>
+              <dd>1,234 次</dd>
+            </div>
+            <div>
+              <dt><span aria-hidden="true">✣</span> 跑步天数</dt>
+              <dd>186 天</dd>
+            </div>
+            <div>
+              <dt><span aria-hidden="true">✦</span> 总里程</dt>
+              <dd>1,268 km</dd>
+            </div>
+            <div class="profile-extra" hidden>
+              <dt><span aria-hidden="true">▥</span> 最近距离</dt>
+              <dd>21.42 km</dd>
+            </div>
+          </dl>
+
+          <button class="profile-more-button" type="button" aria-expanded="false">
+            <span>了解更多关于我</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </aside>
       <section class="overview-layer" id="overview-layer" aria-label="底部信息概览"></section>
     </main>
   </div>
   <script type="module" src="./src/main.js"></script>
+  <script>
+    const profileMoreButton = document.querySelector(".profile-more-button");
+    const profileExtra = document.querySelector(".profile-extra");
+
+    profileMoreButton.addEventListener("click", () => {
+      const expanded = profileMoreButton.getAttribute("aria-expanded") === "true";
+
+      profileMoreButton.setAttribute("aria-expanded", String(!expanded));
+      profileMoreButton.querySelector("span").textContent = expanded ? "了解更多关于我" : "收起个人信息";
+      profileExtra.hidden = expanded;
+    });
+  </script>
 </body>
 </html>
