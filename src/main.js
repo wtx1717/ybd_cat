@@ -20,6 +20,10 @@ const elements = {
 };
 
 function renderModulePanel() {
+  if (!elements.modulePanel) {
+    return;
+  }
+
   const { selectedBuilding } = appState.getState();
   const building = buildings.find((item) => item.id === selectedBuilding);
 
@@ -45,20 +49,32 @@ function renderModulePanel() {
 }
 
 function renderApp() {
-  renderTopNavLayer(elements.topNavLayer, {
-    player,
-    navigationItems,
-    appState,
-  });
-  renderBackgroundLayer(elements.backgroundLayer);
-  renderBuildingLayer(elements.buildingLayer, {
-    buildings,
-    appState,
-  });
-  renderOverviewLayer(elements.overviewLayer, {
-    overview,
-    appState,
-  });
+  if (elements.topNavLayer) {
+    renderTopNavLayer(elements.topNavLayer, {
+      player,
+      navigationItems,
+      appState,
+    });
+  }
+
+  if (elements.backgroundLayer) {
+    renderBackgroundLayer(elements.backgroundLayer);
+  }
+
+  if (elements.buildingLayer) {
+    renderBuildingLayer(elements.buildingLayer, {
+      buildings,
+      appState,
+    });
+  }
+
+  if (elements.overviewLayer) {
+    renderOverviewLayer(elements.overviewLayer, {
+      overview,
+      appState,
+    });
+  }
+
   renderModulePanel();
 }
 
