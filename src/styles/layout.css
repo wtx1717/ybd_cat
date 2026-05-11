@@ -22,6 +22,7 @@
   height: var(--nav-height);
   padding: 8px clamp(18px, 1.55vw, 30px);
   color: var(--text-light);
+  font-family: var(--font-pixel);
   overflow: visible;
   border: 2px solid #b87924;
   border-bottom-width: 3px;
@@ -219,8 +220,9 @@
 .nav-item {
   position: relative;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  gap: 0;
+  grid-template-rows: auto auto;
+  align-content: center;
+  gap: 1px;
   align-items: center;
   justify-items: center;
   width: clamp(66px, 4.05vw, 86px);
@@ -247,6 +249,8 @@
   width: clamp(36px, 2.6vw, 52px);
   height: clamp(36px, 2.6vw, 52px);
   object-fit: contain;
+  transform: translateY(0);
+  transition: transform 140ms steps(2, end);
 }
 
 .nav-item.is-active img {
@@ -272,7 +276,7 @@
 
 .nav-item:hover img,
 .nav-item:focus-visible img {
-  filter: brightness(1.12);
+  transform: translateY(-6px);
 }
 
 .task-section {

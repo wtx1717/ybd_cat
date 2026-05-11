@@ -1,4 +1,5 @@
 :root {
+  --font-pixel: "Fusion Pixel 12px Proportional Zh Hans", "Microsoft YaHei", sans-serif;
   --nav-bg: #1f4e5f;
   --content-bg: #f4c95d;
   --content-panel-bg: #ffffff;
@@ -6,6 +7,12 @@
   --text-light: #ffffff;
   --text-muted: #4d5b63;
   --link-bg: rgba(255, 255, 255, 0.14);
+}
+
+@font-face {
+  font-family: "Fusion Pixel 12px Proportional Zh Hans";
+  src: url("../../assets/fonts/fusion-pixel-font/fusion-pixel-12px-proportional-zh_hans.otf.woff2") format("woff2");
+  font-display: swap;
 }
 
 * {
