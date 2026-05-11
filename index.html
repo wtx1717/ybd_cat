@@ -141,7 +141,68 @@
           </button>
         </div>
       </aside>
-      <section class="overview-layer" id="overview-layer" aria-label="底部信息概览"></section>
+      <section class="overview-layer" id="overview-layer" aria-label="底部信息概览">
+        <button class="overview-book-toggle" type="button" aria-expanded="true" aria-controls="overview-panel">
+          <span class="book-cover" aria-hidden="true">
+            <span class="book-emblem">云</span>
+          </span>
+          <span class="book-ribbon">点击收起概览</span>
+        </button>
+
+        <div class="overview-panel" id="overview-panel">
+          <div class="overview-card overview-card-activity">
+            <div class="overview-heading">
+              <span aria-hidden="true">♟</span>
+              <h2>最近动态</h2>
+              <span aria-hidden="true">♣</span>
+            </div>
+            <ol class="activity-list">
+              <li><span>10:30</span><strong>ShoeCloud 新增足迹地图功能</strong></li>
+              <li><span>09:15</span><strong>完成 7.32 km 轻松跑</strong></li>
+              <li><span>昨天</span><strong>Arduino 固件更新 v1.2.3</strong></li>
+              <li><span>06-02</span><strong>优化跑步数据可视化面板</strong></li>
+            </ol>
+            <a class="overview-link" href="#logs">查看全部动态</a>
+          </div>
+
+          <div class="overview-card overview-card-training">
+            <div class="overview-heading">
+              <span aria-hidden="true">♙</span>
+              <h2>本周训练概览</h2>
+              <span aria-hidden="true">♣</span>
+            </div>
+            <div class="training-distance">
+              <strong>12.86 km</strong>
+              <span>/ 25.00 km</span>
+            </div>
+            <div class="progress-track" aria-label="本周目标完成 51%">
+              <span style="width: 51%"></span>
+            </div>
+            <dl class="training-stats">
+              <div><dt>训练频率</dt><dd>4 / 6 天</dd></div>
+              <div><dt>状态恢复</dt><dd>良好</dd></div>
+            </dl>
+          </div>
+
+          <div class="overview-card overview-card-weather">
+            <div class="overview-heading">
+              <span aria-hidden="true">♙</span>
+              <h2>今日天气 + 时钟显示</h2>
+              <span aria-hidden="true">♣</span>
+            </div>
+            <div class="weather-layout">
+              <div class="weather-icon" aria-hidden="true">☀</div>
+              <div>
+                <strong>24°C</strong>
+                <span>多云转晴</span>
+                <small>深圳市</small>
+              </div>
+              <time data-clock>10:42:36</time>
+            </div>
+            <p class="weather-note">适合跑步的好天气，出发吧！</p>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
   <script type="module" src="./src/main.js"></script>
@@ -156,6 +217,20 @@
       profileMoreButton.querySelector("span").textContent = expanded ? "了解更多关于我" : "收起个人信息";
       profileExtra.hidden = expanded;
     });
+
+    if (location.protocol === "file:") {
+      const overviewLayer = document.querySelector("#overview-layer");
+      const overviewToggle = overviewLayer.querySelector(".overview-book-toggle");
+      const overviewRibbon = overviewLayer.querySelector(".book-ribbon");
+
+      overviewToggle.addEventListener("click", () => {
+        const expanded = overviewToggle.getAttribute("aria-expanded") === "true";
+
+        overviewLayer.classList.toggle("is-collapsed", expanded);
+        overviewToggle.setAttribute("aria-expanded", String(!expanded));
+        overviewRibbon.textContent = expanded ? "点击翻阅概览" : "点击收起概览";
+      });
+    }
   </script>
 </body>
 </html>
